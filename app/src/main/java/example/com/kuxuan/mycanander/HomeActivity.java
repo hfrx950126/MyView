@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getActionBar();
-        if(actionBar!=null){
+        if (actionBar != null) {
             actionBar.hide();
         }
 
@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
         mList.add("自定义圆");
         mList.add("模拟ViewPager");
         mList.add("自定义流布局");
+        mList.add("粘性拖拽");
         mHomeAdapter = new HomeAdapter(this, mList);
         mListView.setAdapter(mHomeAdapter);
 
@@ -50,8 +51,12 @@ public class HomeActivity extends AppCompatActivity {
                     intent = new Intent(HomeActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
-                if(position ==2){
+                if (position == 2) {
                     intent = new Intent(HomeActivity.this, FlowActivity.class);
+                    startActivity(intent);
+                }
+                if (position == 3) {
+                    intent = new Intent(HomeActivity.this, TouchActivity.class);
                     startActivity(intent);
                 }
             }
